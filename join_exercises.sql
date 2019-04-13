@@ -43,10 +43,11 @@ order by `Department Name`;
 #        departments.dept_name,
 
 select *
-from employees
-join dept_emp on employees.emp_no = dept_emp.emp_no
+from employees e
+join dept_emp on e.emp_no = dept_emp.emp_no
 join departments on dept_emp.dept_no = departments.dept_no
-join dept_manager on employees.emp_no = dept_manager.emp_no
-where dept_emp.to_date like '9999%';
+# join dept_manager dm on e.emp_no = dm.emp_no
+# join employees managers on managers.emp_no = dm.emp_no;
+where dept_emp.to_date > now():
 
 
